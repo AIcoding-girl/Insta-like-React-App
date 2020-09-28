@@ -8,6 +8,11 @@ class Auth {
         cb()
     }
 
+    register(cb) {
+        this.authenticated = true
+        cb()
+    }
+
     logout(cb) {
         this.authenticated = false
         cb()

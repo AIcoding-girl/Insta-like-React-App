@@ -1,10 +1,12 @@
 import React from 'react'
 import auth from '../auth'
 
-function SignIn(props) => {
+// import { FlatLayout } from './components/Layouts/FlatLayout'
+
+function SignIn() {
     return (
         <div>
-            <h1>Sign In</h1>
+            <h1>Photo Z</h1>
             <button onClick={
                 () => {
                     auth.login(() => {
@@ -15,16 +17,14 @@ function SignIn(props) => {
                 Sign In
         </button>
 
-        <h1>Sign Up</h1>
-        <button onClick={
+            <h3>Sign Up</h3>
+            <button onClick={
                 () => {
                     auth.login(() => {
-                        this.props.history.push("./login")
+                        this.props.history.push("./register")
                     })
                 }
-            }>
-                Sign Up
-        </button>
+            }>Sign Up</button>
         </div>
     )
 }
