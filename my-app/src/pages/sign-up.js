@@ -1,40 +1,11 @@
 import React, { Component } from 'react'
 import auth from '../auth'
 
-// import { FlatLayout } from './components/Layouts/FlatLayout'
-
-// function SignIn() {
-//     return (
-//         <div>
-//             <h1>Photo Z</h1>
-
-//             <button onClick={
-//                 () => {
-//                     auth.login(() => {
-//                         this.props.history.push("./login")
-//                     })
-//                 }
-//             }>
-//                 Sign In
-//                 </button>
-
-//             <h3>Sign Up</h3>
-//             <button onClick={
-//                 () => {
-//                     auth.login(() => {
-//                     })
-//                 }
-//             }>Sign Up</button>
-//         </div>
-//     )
-// }
-
-// export default SignIn
-
-class SignIn extends Component {
+class SignUp extends Component {
     constructor() {
         super()
         this.state = {
+            username: "",
             email: "",
             password: ""
         }
@@ -51,6 +22,16 @@ class SignIn extends Component {
         return (
             <div>
                 <form>
+                    <label>
+                        Username
+                        <br />
+                        <input
+                            type="username"
+                            value={this.state.username}
+                            name="username"
+                            onChange={this.handleChange} />
+                    </label>
+                    <br />
                     <label>
                         Email
                         <br />
@@ -71,8 +52,6 @@ class SignIn extends Component {
                             name="password"
                             onChange={this.handleChange} />
                     </label>
-
-                    {/* <h1>{this.state.email} {this.state.password}</h1> */}
                 </form>
 
                 <br />
@@ -80,28 +59,25 @@ class SignIn extends Component {
                 <button onClick={
                     () => {
                         auth.login(() => {
-                            this.props.history.push("./login")
+                            this.props.history.push("./signup")
+                        })
+                    }
+                }>Sign Up</button>
+
+                <br />
+
+                <button onClick={
+                    () => {
+                        auth.login(() => {
+                            this.props.history.push("./")
                         })
                     }
                 }>
                     Sign In
                 </button>
-
-                <br />
-
-                <a href="#">Forgot password?</a>
-
-                <br />
-                <button onClick={
-                    () => {
-                        auth.login(() => {
-                            this.props.history.push("./signup")
-                        })
-                    }
-                }>Sign Up</button>
             </div>
         )
     }
 }
 
-export default SignIn
+export default SignUp

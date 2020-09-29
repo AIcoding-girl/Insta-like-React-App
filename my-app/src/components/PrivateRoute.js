@@ -2,7 +2,7 @@ import React from "react";
 import { Redirect, Route } from "react-router-dom";
 // import routes from "./constants/routes";
 
-({path, component: Component, layout, ...rest})
+// ({path, component: Component, layout, ...rest})
 
 const PrivateRoute = ({path, component: Component, layout, ...rest}) => {
   return (
