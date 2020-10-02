@@ -1,5 +1,6 @@
-import { findByLabelText } from '@testing-library/react'
+
 import React, { Component } from 'react'
+import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import auth from '../auth'
 
 // import { FlatLayout } from './components/Layouts/FlatLayout'
@@ -57,39 +58,42 @@ class SignIn extends Component {
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
-            margin: "10% auto",
+            margin: "auto",
+            marginTop: "10%",
             paddingTop: "5%",
             paddingBottom: "5%"
         }
 
         return (
             <div style={boxContainer}>
-                <form >
-                    <label>
-                        Email
+                <Form >
+                    <FormGroup>
+                        <Label for="email-input">Email </Label>
                         <br />
-                        <input
+                        <Input
                             type="email"
+                            id="email-input"
                             value={this.state.email}
                             name="email"
                             onChange={this.handleChange} />
-                    </label>
-                    <br />
-                    <label>
-                        Password
                         <br />
-                        <input
+                    </FormGroup>
+
+                    <FormGroup>
+                        <Label for="password-input">Password </Label>
+                        <br />
+                        <Input
                             type="password"
+                            id="password-input"
                             value={this.state.password}
                             name="password"
                             onChange={this.handleChange} />
-                    </label>
-                    <br />
-
+                        <br />
+                    </FormGroup>
                     {/* <h1>{this.state.email} {this.state.password}</h1> */}
-                </form>
+                </Form>
 
-                <button onClick={
+                <Button onClick={
                     () => {
                         auth.login(() => {
                             this.props.history.push("./login")
@@ -97,20 +101,68 @@ class SignIn extends Component {
                     }
                 }>
                     Sign In
-                </button>
+                </Button>
 
                 <a href="#">Forgot password?</a>
 
-                <button onClick={
+                <Button onClick={
                     () => {
                         auth.login(() => {
                             this.props.history.push("./signup")
                         })
                     }
-                }>Sign Up</button>
+                }>Sign Up</Button>
             </div>
         )
     }
 }
 
 export default SignIn
+
+// class SignIn extends Component {
+//     constructor(props) {
+//         super();
+//         this.state = {
+//             email: "",
+//             password: ""
+//         };
+//     }
+
+//     render() {
+//         const { email, password } = this.state;
+//         return (
+//             <form onSubmit={this.handleSubmit}>
+//                 <label htmlFor="email">Email</label>
+//                 <Input
+//                     name="email"
+//                     type="text"
+//                     placeholder="Enter your email"
+//                     value={email}
+//                     onChange={this.handleChange}
+//                 />
+//                 <label htmlFor="email">Password</label>
+//                 <input
+//                     name="password"
+//                     type="password"
+//                     placeholder="Enter your password"
+//                     value={password}
+//                     onChange={this.handleChange}
+//                 />
+//                 <button type="submit">Login</button>
+//             </form>
+//         );
+//     }
+
+//     handleChange = event => {
+//         this.setState({
+//             [event.target.name]: event.target.value
+//         });
+//     };
+
+//     handleSubmit = event => {
+//         console.log("Submitting");
+//         console.log(this.state);
+//     };
+// }
+
+// export default SignIn
