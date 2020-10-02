@@ -1,3 +1,4 @@
+import { findByLabelText } from '@testing-library/react'
 import React, { Component } from 'react'
 import auth from '../auth'
 
@@ -32,6 +33,7 @@ import auth from '../auth'
 // export default SignIn
 
 class SignIn extends Component {
+
     constructor() {
         super()
         this.state = {
@@ -48,8 +50,20 @@ class SignIn extends Component {
     }
 
     render() {
+        const boxContainer = {
+            width: "40%",
+            backgroundColor: "white",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+            margin: "10% auto",
+            paddingTop: "5%",
+            paddingBottom: "5%"
+        }
+
         return (
-            <div>
+            <div style={boxContainer}>
                 <form>
                     <label>
                         Email
