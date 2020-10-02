@@ -51,7 +51,7 @@ class SignIn extends Component {
 
     render() {
         const boxContainer = {
-            width: "40%",
+            width: "30%",
             backgroundColor: "white",
             display: "flex",
             flexDirection: "column",
@@ -64,7 +64,7 @@ class SignIn extends Component {
 
         return (
             <div style={boxContainer}>
-                <form>
+                <form >
                     <label>
                         Email
                         <br />
@@ -75,7 +75,6 @@ class SignIn extends Component {
                             onChange={this.handleChange} />
                     </label>
                     <br />
-
                     <label>
                         Password
                         <br />
@@ -85,11 +84,10 @@ class SignIn extends Component {
                             name="password"
                             onChange={this.handleChange} />
                     </label>
+                    <br />
 
                     {/* <h1>{this.state.email} {this.state.password}</h1> */}
                 </form>
-
-                <br />
 
                 <button onClick={
                     () => {
@@ -101,11 +99,8 @@ class SignIn extends Component {
                     Sign In
                 </button>
 
-                <br />
-
                 <a href="#">Forgot password?</a>
 
-                <br />
                 <button onClick={
                     () => {
                         auth.login(() => {
