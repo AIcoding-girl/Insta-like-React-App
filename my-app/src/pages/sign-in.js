@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import { Link } from 'react-router-dom'
 // import SVG from "../components/svg"
+import axios from 'axios'
 import auth from '../auth'
 
 // import { FlatLayout } from './components/Layouts/FlatLayout'
@@ -35,16 +36,30 @@ import auth from '../auth'
 
 // export default SignIn
 
+// const api = axios.create({
+//     baseURL: `http://localhost:3000/`
+// })
+
 class SignIn extends Component {
 
     constructor() {
         super()
+
+        // api.get('/').then(res => {
+        //     console.log(res.data)
+        // })
+
         this.state = {
-            email: "",
-            password: ""
+            email: '',
+            password: ''
         }
         this.handleChange = this.handleChange.bind(this)
     }
+
+    // createUser = async () => {
+    //     let res = await api.post('/login', { email: '{ email}', password: '{ password }' })
+    //     console.log(res)
+    // }
 
     handleChange(event) {
         this.setState({
