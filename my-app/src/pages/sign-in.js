@@ -1,6 +1,7 @@
 
 import React, { Component } from 'react'
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import { Link } from 'react-router-dom'
 import auth from '../auth'
 
 // import { FlatLayout } from './components/Layouts/FlatLayout'
@@ -52,7 +53,7 @@ class SignIn extends Component {
 
     render() {
         const boxContainer = {
-            width: "30%",
+            width: "20%",
             backgroundColor: "white",
             display: "flex",
             flexDirection: "column",
@@ -60,14 +61,15 @@ class SignIn extends Component {
             alignItems: "center",
             margin: "auto",
             marginTop: "10%",
-            paddingTop: "5%",
-            paddingBottom: "5%"
+            paddingTop: "1%",
+            paddingBottom: "1%"
         }
 
         return (
             <div style={boxContainer}>
                 <Form >
                     <FormGroup>
+                        <h3> Sign In</h3>
                         <Label for="email-input">Email </Label>
                         <br />
                         <Input
@@ -105,13 +107,17 @@ class SignIn extends Component {
 
                 <a href="#">Forgot password?</a>
 
-                <Button onClick={
+                {/* <Button onClick={
                     () => {
                         auth.login(() => {
                             this.props.history.push("./signup")
                         })
                     }
-                }>Sign Up</Button>
+                }>Sign Up</Button> */}
+
+                <Link to="/signup" className="btn btn-primary">Sign up</Link>
+
+                {/* <Redirect to="/signup" className="btn btn-primary"/>Sign up */}
             </div>
         )
     }

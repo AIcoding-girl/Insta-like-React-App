@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import auth from '../auth'
 
 class SignUp extends Component {
@@ -19,9 +20,22 @@ class SignUp extends Component {
     }
 
     render() {
+        const boxContainer = {
+            width: "20%",
+            backgroundColor: "white",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+            margin: "auto",
+            marginTop: "10%",
+            paddingTop: "1%",
+            paddingBottom: "1%"
+        }
         return (
-            <div>
+            <div style={boxContainer}>
                 <form>
+                    <h3> Sign In</h3>
                     <label>
                         Username
                         <br />
@@ -66,7 +80,7 @@ class SignUp extends Component {
 
                 <br />
 
-                <button onClick={
+                {/* <button onClick={
                     () => {
                         auth.login(() => {
                             this.props.history.push("./")
@@ -74,7 +88,9 @@ class SignUp extends Component {
                     }
                 }>
                     Sign In
-                </button>
+                </button> */}
+
+                <Link to="/" className="btn btn-primary">Sign In</Link>
             </div>
         )
     }
