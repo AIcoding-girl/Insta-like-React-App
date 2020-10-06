@@ -77,10 +77,8 @@ class SignUp extends Component {
         <Form style={formContainer} onSubmit={this.createUser}>
           <FormGroup>
             <h3> Sign Up</h3>
-
             <Label>
               Username
-              <br />
               <Input
                 type="username"
                 value={this.state.username}
@@ -92,7 +90,6 @@ class SignUp extends Component {
 
           <FormGroup>
             <Label for="email-input">Email </Label>
-            <br />
             <Input
               type="email"
               id="email-input"
@@ -100,12 +97,10 @@ class SignUp extends Component {
               name="email"
               onChange={this.handleChange}
             />
-            <br />
           </FormGroup>
 
           <FormGroup>
             <Label for="password-input">Password </Label>
-            <br />
             <Input
               type="password"
               id="password-input"
@@ -113,7 +108,6 @@ class SignUp extends Component {
               name="password"
               onChange={this.handleChange}
             />
-            <br />
           </FormGroup>
           <Button
             color="primary"
@@ -127,8 +121,7 @@ class SignUp extends Component {
           </Button>
           {/* <h1>{this.state.email} {this.state.password}</h1> */}
         </Form>
-        <br />
-        <Link to="/" className="btn btn-primary">
+        <Link to="/" className="btn">
           Sign In
         </Link>
       </div>

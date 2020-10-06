@@ -116,7 +116,7 @@ class SignIn extends Component {
           <FormGroup>
             <h3> Sign In</h3>
             <Label for="email-input">Email </Label>
-            <br />
+
             <Input
               type="email"
               id="email-input"
@@ -124,12 +124,11 @@ class SignIn extends Component {
               name="email"
               onChange={this.handleChange}
             />
-            <br />
           </FormGroup>
 
           <FormGroup>
             <Label for="password-input">Password </Label>
-            <br />
+
             <Input
               type="password"
               id="password-input"
@@ -137,11 +136,8 @@ class SignIn extends Component {
               name="password"
               onChange={this.handleChange}
             />
-            <br />
 
-            <Link to="*" className="btn btn-primary">
-              Forgot password
-            </Link>
+            <Link to="*">Forgot password</Link>
 
             <Button
               color="primary"
@@ -156,10 +152,7 @@ class SignIn extends Component {
           </FormGroup>
           {/* <h1>{this.state.email} {this.state.password}</h1> */}
         </Form>
-
-        <Link to="/signup" className="btn btn-primary">
-          Sign up
-        </Link>
+        <Link to="/signup">Sign up</Link>
       </div>
     );
   }
