@@ -32,7 +32,7 @@ class SignUp extends Component {
       email: this.state.email,
       password: this.state.password,
     });
-    console.log(res);
+    console.log(res.username);
   };
 
   render() {
@@ -119,9 +119,7 @@ class SignUp extends Component {
             color="primary"
             onClick={() => {
               auth.login(() => {
-                this.props.history.push(
-                  "http://localhost:3000/api/v1/auth/users"
-                );
+                this.props.history.push("/api/v1/auth/users");
               });
             }}
           >

@@ -2,8 +2,9 @@ import React, { Component } from "react";
 import { Button, Form, FormGroup, Label, Input } from "reactstrap";
 import { Link } from "react-router-dom";
 // import SVG from "../components/svg"
-// import axios from "axios";
+import axios from "axios";
 import auth from "../auth";
+// import Login from "../components/Login";
 
 // import { FlatLayout } from './components/Layouts/FlatLayout'
 
@@ -35,17 +36,20 @@ import auth from "../auth";
 
 // export default SignIn
 
-// const api = axios.create({
-//     baseURL: `http://localhost:3000/`
-// })
+const api = axios.create({
+  baseURL: `http://localhost:3000/`,
+  headers: {
+    "X-auth-key": "token123",
+  },
+});
 
 class SignIn extends Component {
   constructor() {
     super();
 
-    // api.get('/').then(res => {
-    //     console.log(res.data)
-    // })
+    api.get("/").then((res) => {
+      console.log(res.data);
+    });
 
     this.state = {
       email: "",
@@ -54,10 +58,14 @@ class SignIn extends Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
-  // createUser = async () => {
-  //     let res = await api.post('/login', { email: '{ email}', password: '{ password }' })
-  //     console.log(res)
-  // }
+  createUser = async () => {
+    let res = await api.post("/login", {
+      email: "email",
+      password: "password",
+    });
+    // console.log(res);
+    this.setState({ email: res.data });
+  };
 
   handleChange(event) {
     this.setState({
@@ -73,7 +81,7 @@ class SignIn extends Component {
       alignItems: "center",
       margin: "auto",
       marginTop: "5%",
-      // fontFamily: "Montserrat"
+      // fontFamily: "Montserrat",
     };
     const formContainer = {
       width: "29rem",
@@ -104,7 +112,7 @@ class SignIn extends Component {
 
         <h2>PhotoZ</h2>
 
-        <Form style={formContainer}>
+        <Form style={formContainer} onSubmit={this.createUser}>
           <FormGroup>
             <h3> Sign In</h3>
             <Label for="email-input">Email </Label>
@@ -139,9 +147,7 @@ class SignIn extends Component {
               color="primary"
               onClick={() => {
                 auth.login(() => {
-                  this.props.history.push(
-                    "http://localhost:3000/api/v1/auth/session"
-                  );
+                  this.props.history.push("/api/v1/auth/session");
                 });
               }}
             >
