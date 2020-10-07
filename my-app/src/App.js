@@ -9,6 +9,7 @@ import NotFound from "./pages/NotFound";
 import Dashboard from "./pages/Dashboard";
 
 import "bootstrap/dist/css/bootstrap.min.css";
+import "./styles/main.css";
 // import other css files
 
 function App() {
