@@ -6,28 +6,28 @@
   padding: 0;
 }
 
-body {
+:root {
   background-color: #e3f2fd;
   font-family: "Montserrat", sans-serif;
 }
 
 .boxContainer {
-  width: "29rem";
-  display: "flex";
-  flex-direction: "column";
-  justify-content: "center";
-  align-items: "center";
-  margin: "0 auto";
-  margin-top: "2%";
+  background-color: #e3f2fd;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 2%;
 }
 
 .formContainer {
-  width: "90%";
-  background-color: "white";
-  display: "flex";
-  flex-direction: "column";
-  justify-content: "center";
-  align-items: "center";
-  margin: "auto";
-  padding: "10px";
+  width: 465px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  padding: 10px;
 }

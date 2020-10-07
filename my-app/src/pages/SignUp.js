@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Button, Form, FormGroup, Label, Input } from "reactstrap";
 import { Link } from "react-router-dom";
+import "../styles/main.scss";
 // import axios from "axios";
 import auth from "../auth";
 
@@ -36,27 +37,8 @@ class SignUp extends Component {
   // };
 
   render() {
-    const boxContainer = {
-      display: "flex",
-      flexDirection: "column",
-      justifyContent: "center",
-      alignItems: "center",
-      margin: "auto",
-      marginTop: "2%",
-    };
-    const formContainer = {
-      width: "29rem",
-      backgroundColor: "white",
-      display: "flex",
-      flexDirection: "column",
-      justifyContent: "center",
-      alignItems: "center",
-      // margin: "auto",
-      padding: "10px",
-    };
-
     return (
-      <div style={boxContainer}>
+      <div className="boxContainer">
         <svg
           width="95"
           height="83"
@@ -80,7 +62,7 @@ class SignUp extends Component {
 
         <h3>PhotoZ</h3>
 
-        <Form style={formContainer} onSubmit={this.createUser}>
+        <Form className="formContainer" onSubmit={this.createUser}>
           <FormGroup>
             <h3> Sign Up</h3>
             <Label>
@@ -127,9 +109,7 @@ class SignUp extends Component {
           </Button>
           {/* <h1>{this.state.email} {this.state.password}</h1> */}
         </Form>
-        <Link to="/" className="btn">
-          Sign In
-        </Link>
+        <Link to="/">Sign In</Link>
       </div>
     );
   }
