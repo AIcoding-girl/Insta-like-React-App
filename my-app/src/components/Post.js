@@ -18,8 +18,7 @@ import "../styles/main.scss";
 
 function Post() {
   return (
-    // Create a post component.
-    // The post component should show the title, image, "Show comments" button, input field, and submit button.
+    // "Show comments" button
     <div>
       <Container className="postContainer">
         <Row>
