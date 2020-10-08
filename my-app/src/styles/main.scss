@@ -31,3 +31,15 @@
   margin: auto;
   padding: 10px;
 }
+
+.navbar-brand.navbar-icon {
+  display: flex;
+  justify-content: left;
+  align-content: center;
+  margin-left: 0;
+}
+
+.navbar-icon svg,
+.post-button {
+  margin-right: 10px;
+}

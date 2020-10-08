@@ -10,6 +10,7 @@ import {
   DropdownMenu,
   DropdownItem,
 } from "reactstrap";
+import "../styles/main.scss";
 
 class Header extends Component {
   render() {
@@ -21,7 +22,7 @@ class Header extends Component {
           light
           expand="sm"
         >
-          <NavbarBrand>
+          <NavbarBrand className="navbar-icon">
             <svg
               width="36"
               height="30"
@@ -45,7 +46,7 @@ class Header extends Component {
             <div className="d-none d-sm-inline text-white">PhotoZ</div>
           </NavbarBrand>
           <Nav className="flex-row" navbar>
-            <NavItem className="">
+            <NavItem className="post-button">
               <Button color="info">Create New Post</Button>{" "}
             </NavItem>
             <UncontrolledDropdown nav>
