@@ -1,9 +1,11 @@
 import React from "react";
+import Header from "../components/Navbar";
 
 function Home() {
   return (
     <div>
-      <h2>You are logged in</h2>;
+      <Header />
+      {/* <h2>You are logged in</h2>; */}
     </div>
   );
 }

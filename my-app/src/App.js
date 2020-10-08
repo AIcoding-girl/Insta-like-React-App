@@ -1,7 +1,7 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
 
-import PrivateRoute from "./components/PrivateRoute";
+// import PrivateRoute from "./components/PrivateRoute";
 
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
@@ -17,11 +17,11 @@ function App() {
     <Switch>
       <Route exact path="/" component={SignIn} />
       <Route exact path="/signup" component={SignUp} />
-
-      <Route path="*" component={NotFound} />
       {/* <Route path="*" component={() => "404 Not Found"} /> */}
 
-      <PrivateRoute path="/home" component={Home} />
+      {/* <PrivateRoute path="/home" component={Home} /> */}
+      <Route path="/home" component={Home} />
+      <Route path="*" component={NotFound} />
     </Switch>
   );
 }
