@@ -25,12 +25,11 @@ function Post() {
         <Row>
           <Col sm="12" md={{ size: 8, offset: 2 }}>
             <Card className="postCard">
-              <CardTitle>Post picture</CardTitle>
+              <CardTitle>Beautiful picture</CardTitle>
               <CardImg
-                top
                 width="100%"
-                src="https://loremflickr.com/g/320/240/paris"
-                alt="Card image cap"
+                src="https://source.unsplash.com/random/960x540"
+                alt="Random image"
               />
               <CardBody>
                 <h2>

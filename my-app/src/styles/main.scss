@@ -1,13 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
 
+:root {
+  background-color: #e3f2fd;
+  font-family: "Montserrat", sans-serif;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-}
-
-:root {
-  background-color: #e3f2fd;
   font-family: "Montserrat", sans-serif;
 }
 
@@ -44,8 +45,17 @@
   margin-right: 10px;
 }
 
+.homeContainer {
+  margin: 0;
+  padding: 0;
+  padding-bottom: 50px;
+  background-color: #e3f2fd;
+}
+
 .postContainer {
   width: 100%;
+  margin: 0;
+  padding: 0;
   background-color: #e3f2fd;
 }
 

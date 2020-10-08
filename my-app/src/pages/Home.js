@@ -5,8 +5,9 @@ import "../styles/main.scss";
 
 function Home() {
   return (
-    <div>
+    <div className="homeContainer">
       <Header />
+      <Post />
       <Post />
     </div>
   );
