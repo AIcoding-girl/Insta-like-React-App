@@ -46,7 +46,10 @@ class Header extends Component {
             <div className="d-none d-sm-inline text-white">PhotoZ</div>
           </NavbarBrand>
           <Nav className="flex-row" navbar>
-            <NavItem className="post-button">
+            <NavItem
+              className="post-button"
+              //   style={{ backgroundColor: "#09322D" }}
+            >
               <Button color="info">Create New Post</Button>{" "}
             </NavItem>
             <UncontrolledDropdown nav>

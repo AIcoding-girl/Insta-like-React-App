@@ -1,11 +1,13 @@
 import React from "react";
 import Header from "../components/Navbar";
+import Post from "../components/Post";
+import "../styles/main.scss";
 
 function Home() {
   return (
     <div>
       <Header />
-      {/* <h2>You are logged in</h2>; */}
+      <Post />
     </div>
   );
 }
