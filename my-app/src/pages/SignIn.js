@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Button, Form, FormGroup, Label, Input } from "reactstrap";
 import { Link } from "react-router-dom";
 import "../styles/main.scss";
-// import axios from "axios";
+import axios from "axios";
 import auth from "../auth";
 // import Login from "../components/Login";
 
@@ -36,20 +36,20 @@ import auth from "../auth";
 
 // export default SignIn
 
-// const api = axios.create({
-//   baseURL: `http://localhost:3000/`,
-//   headers: {
-//     "X-auth-key": "token123",
-//   },
-// });
+const api = axios.create({
+  baseURL: `http://localhost:3000/`,
+  headers: {
+    "X-auth-key": "token123",
+  },
+});
 
 class SignIn extends Component {
   constructor() {
     super();
 
-    // api.get("/").then((res) => {
-    //   console.log(res.data);
-    // });
+    api.get("/").then((res) => {
+      console.log(res.data);
+    });
 
     this.state = {
       email: "",
@@ -58,14 +58,14 @@ class SignIn extends Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
-  // createUser = async () => {
-  //   let res = await api.post("/login", {
-  //     email: "email",
-  //     password: "password",
-  //   });
-  //   console.log(res);
-  //   this.setState({ email: res.data });
-  // };
+  createUser = async () => {
+    let res = await api.post("/login", {
+      email: "email",
+      password: "password",
+    });
+    console.log(res);
+    this.setState({ email: res.data });
+  };
 
   handleChange(event) {
     this.setState({
@@ -103,30 +103,31 @@ class SignIn extends Component {
           <FormGroup>
             <h3> Sign In</h3>
             <Label for="email-input">Email </Label>
-
             <Input
               type="email"
               id="email-input"
               value={this.state.email}
               name="email"
               onChange={this.handleChange}
+              required
             />
           </FormGroup>
 
           <FormGroup>
             <Label for="password-input">Password </Label>
-
             <Input
               type="password"
               id="password-input"
               value={this.state.password}
               name="password"
               onChange={this.handleChange}
+              required
             />
 
             <Link to="*">Forgot password</Link>
 
             <Button
+              type="submit"
               color="primary"
               onClick={() => {
                 auth.login(() => {

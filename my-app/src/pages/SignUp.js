@@ -72,6 +72,7 @@ class SignUp extends Component {
                 value={this.state.username}
                 name="username"
                 onChange={this.handleChange}
+                required
               />
             </Label>
           </FormGroup>
@@ -84,6 +85,7 @@ class SignUp extends Component {
               value={this.state.email}
               name="email"
               onChange={this.handleChange}
+              required
             />
           </FormGroup>
 
@@ -95,6 +97,7 @@ class SignUp extends Component {
               value={this.state.password}
               name="password"
               onChange={this.handleChange}
+              required
             />
           </FormGroup>
           <Button

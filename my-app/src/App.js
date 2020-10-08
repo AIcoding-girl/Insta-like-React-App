@@ -6,7 +6,7 @@ import PrivateRoute from "./components/PrivateRoute";
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
 import NotFound from "./pages/NotFound";
-import Dashboard from "./pages/Dashboard";
+import Home from "./pages/Home";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles/main.scss";
@@ -21,7 +21,7 @@ function App() {
       <Route path="*" component={NotFound} />
       {/* <Route path="*" component={() => "404 Not Found"} /> */}
 
-      <PrivateRoute path="/dashboard" component={Dashboard} />
+      <PrivateRoute path="/home" component={Home} />
     </Switch>
   );
 }
