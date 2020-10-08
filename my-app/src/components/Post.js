@@ -33,7 +33,7 @@ function Post() {
               />
               <CardBody>
                 <h2>
-                  <Badge color="secondary">New</Badge>
+                  <Badge color="secondary">Image</Badge>
                 </h2>
                 <InputGroup>
                   <Input placeholder="Write a comment ..." />
