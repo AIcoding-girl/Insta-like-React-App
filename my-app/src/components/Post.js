@@ -15,6 +15,7 @@ import {
   Button,
 } from "reactstrap";
 import "../styles/main.scss";
+import PostImg from "./arc-img.jpg";
 
 function Post() {
   return (
@@ -25,14 +26,10 @@ function Post() {
           <Col sm="12" md={{ size: 8, offset: 2 }}>
             <Card className="postCard">
               <CardTitle>Beautiful picture</CardTitle>
-              <CardImg
-                width="100%"
-                src="https://source.unsplash.com/random/960x540"
-                alt="Random image"
-              />
+              <CardImg width="100%" src={PostImg} alt="Architecture" />
               <CardBody>
                 <h2>
-                  <Badge color="secondary">Image</Badge>
+                  <Badge color="secondary">Masterpiece</Badge>
                 </h2>
                 <InputGroup>
                   <Input placeholder="Write a comment ..." />
