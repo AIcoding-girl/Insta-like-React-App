@@ -101,7 +101,7 @@ class SignIn extends Component {
 
         <Form className="formContainer" onSubmit={this.createUser}>
           <FormGroup>
-            <h3> Sign In</h3>
+            <h3>Sign In</h3>
             <Label for="email-input">Email </Label>
             <Input
               type="email"
@@ -124,9 +124,12 @@ class SignIn extends Component {
               required
             />
 
-            <Link to="*">Forgot password</Link>
+            <Button color="link" className="pl-0 mt-4" to="*">
+              Forgot password
+            </Button>
 
             <Button
+              className="float-right mt-4"
               type="submit"
               color="primary"
               onClick={() => {
@@ -139,7 +142,9 @@ class SignIn extends Component {
             </Button>
           </FormGroup>
         </Form>
-        <Link to="/signup">Sign up</Link>
+        <Link className="mt-3" to="/signup">
+          Sign up
+        </Link>
       </div>
     );
   }

@@ -112,7 +112,9 @@ class SignUp extends Component {
           </Button>
           {/* <h1>{this.state.email} {this.state.password}</h1> */}
         </Form>
-        <Link to="/">Sign In</Link>
+        <Link className="mt-3" to="/">
+          Sign In
+        </Link>
       </div>
     );
   }

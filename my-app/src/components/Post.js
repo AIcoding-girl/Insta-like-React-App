@@ -27,13 +27,15 @@ const Post = ({ img, title, comment }) => {
         <Row>
           <Col sm="12" md={{ size: 8, offset: 2 }}>
             <Card className="post">
-              <CardTitle>{title}</CardTitle>
+              <CardTitle className="p-3">
+                <strong>{title}</strong>
+              </CardTitle>
               <CardImg width="100%" src={img} alt="" />
               <CardBody>
-                <Badge className="mr-2 mb-2" color="primary" pill>
+                <Badge className="mr-2 mb-2 p-2" color="primary" pill>
                   JD
                 </Badge>
-                <Badge color="secondary">{comment}</Badge>
+                <Badge className="p-2">{comment}</Badge>
 
                 <InputGroup>
                   <Input placeholder="Write a comment ..." />

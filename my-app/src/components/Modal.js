@@ -7,14 +7,12 @@ import {
   FormGroup,
   Label,
   Modal,
-  ModalHeader,
   ModalBody,
-  //   ModalFooter,
 } from "reactstrap";
 
 const PostModal = (props) => {
   const { createPost, className } = props;
-  //   title, children and actions.
+  //   title, children and actions
 
   const [modal, setModal] = useState(false);
 
@@ -22,15 +20,16 @@ const PostModal = (props) => {
 
   return (
     <div>
-      <Button color="info" onClick={toggle}>
+      <Button color="info" className="mr-3" onClick={toggle}>
         Create New Post
         {createPost}
       </Button>
       <Modal isOpen={modal} toggle={toggle} className={className}>
-        <ModalHeader toggle={toggle}>
-          <strong>New Post</strong>
-        </ModalHeader>
         <ModalBody>
+          <p>
+            {/* toggle={toggle} */}
+            <strong>New Post</strong>
+          </p>
           <FormGroup>
             <Label for="select-file">Choose file</Label>
             <InputGroup>
@@ -52,9 +51,6 @@ const PostModal = (props) => {
             Create
           </Button>{" "}
         </ModalBody>
-        {/* <Button color="primary" onClick={toggle}>
-            Cancel
-          </Button> */}
       </Modal>
     </div>
   );

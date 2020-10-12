@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import {
-  // Button,
   Navbar,
   NavbarBrand,
   Nav,
@@ -12,6 +11,7 @@ import {
 } from "reactstrap";
 import "../styles/main.scss";
 import PostModal from "./Modal";
+// import auth from "../auth";
 
 class Header extends Component {
   render() {
@@ -49,11 +49,7 @@ class Header extends Component {
             </div>
           </NavbarBrand>
           <Nav className="flex-row" navbar>
-            <NavItem
-            // className="post-button"
-            //   style={{ backgroundColor: "#09322D" }}
-            >
-              {/* <Button color="info">Create New Post</Button> */}
+            <NavItem>
               <PostModal />
             </NavItem>
             <UncontrolledDropdown nav>
@@ -61,7 +57,7 @@ class Header extends Component {
                 User
               </DropdownToggle>
               <DropdownMenu right>
-                <DropdownItem>Sign out</DropdownItem>
+                <DropdownItem href="/">Sign out</DropdownItem>
               </DropdownMenu>
             </UncontrolledDropdown>
           </Nav>
