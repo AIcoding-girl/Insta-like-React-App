@@ -59,10 +59,14 @@
   background-color: #e3f2fd;
 }
 
-.postCard {
+.post {
   display: flex;
   justify-content: center;
   align-content: center;
   margin: auto;
   margin-top: 20px;
+}
+
+.badge-icon {
+  border-radius: 50%;
 }

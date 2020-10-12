@@ -9,28 +9,32 @@ import {
   Col,
   Card,
   CardImg,
-  //   CardText,
   CardBody,
+  // CardText,
   CardTitle,
   Button,
 } from "reactstrap";
 import "../styles/main.scss";
-import PostImg from "./arc-img.jpg";
+// import PostList from "./PostList";
+// import PostImg from "./arc-img.jpg";
+// import PostImg2 from "./switzerland.jpg";
 
-function Post() {
+const Post = ({ img, title, comment }) => {
   return (
     // "Show comments" button
-    <div>
+    <section>
       <Container className="postContainer">
         <Row>
           <Col sm="12" md={{ size: 8, offset: 2 }}>
-            <Card className="postCard">
-              <CardTitle>Beautiful picture</CardTitle>
-              <CardImg width="100%" src={PostImg} alt="Architecture" />
+            <Card className="post">
+              <CardTitle>{title}</CardTitle>
+              <CardImg width="100%" src={img} alt="" />
               <CardBody>
-                <h2>
-                  <Badge color="secondary">Masterpiece</Badge>
-                </h2>
+                <Badge className="mr-2 mb-2" color="primary" pill>
+                  JD
+                </Badge>
+                <Badge color="secondary">{comment}</Badge>
+
                 <InputGroup>
                   <Input placeholder="Write a comment ..." />
                   <InputGroupAddon addonType="append">
@@ -44,7 +48,7 @@ function Post() {
           </Col>
         </Row>
       </Container>
-    </div>
+    </section>
   );
-}
+};
 export default Post;
