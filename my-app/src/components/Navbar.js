@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import {
-  Button,
+  // Button,
   Navbar,
   NavbarBrand,
   Nav,
@@ -11,6 +11,7 @@ import {
   DropdownItem,
 } from "reactstrap";
 import "../styles/main.scss";
+import PostModal from "./Modal";
 
 class Header extends Component {
   render() {
@@ -43,14 +44,17 @@ class Header extends Component {
                 fill="white"
               />
             </svg>
-            <div className="d-none d-sm-inline text-white">PhotoZ</div>
+            <div className="d-none d-sm-inline text-white">
+              <strong>Photo Z</strong>
+            </div>
           </NavbarBrand>
           <Nav className="flex-row" navbar>
             <NavItem
-              className="post-button"
-              //   style={{ backgroundColor: "#09322D" }}
+            // className="post-button"
+            //   style={{ backgroundColor: "#09322D" }}
             >
-              <Button color="info">Create New Post</Button>{" "}
+              {/* <Button color="info">Create New Post</Button> */}
+              <PostModal />
             </NavItem>
             <UncontrolledDropdown nav>
               <DropdownToggle className="text-white" nav caret>
