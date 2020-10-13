@@ -36,20 +36,20 @@ import auth from "../auth";
 
 // export default SignIn
 
-const api = axios.create({
-  baseURL: `http://localhost:3000/`,
-  headers: {
-    "X-auth-key": "token123",
-  },
-});
+// const api = axios.create({
+//   baseURL: `http://localhost:3000/`,
+//   headers: {
+//     "X-auth-key": "token123",
+//   },
+// });
 
 class SignIn extends Component {
   constructor() {
     super();
 
-    api.get("/").then((res) => {
-      console.log(res.data);
-    });
+    // api.get("/").then((res) => {
+    //   console.log(res.data);
+    // });
 
     this.state = {
       email: "",
@@ -58,14 +58,14 @@ class SignIn extends Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
-  createUser = async () => {
-    let res = await api.post("/login", {
-      email: "email",
-      password: "password",
-    });
-    console.log(res);
-    this.setState({ email: res.data });
-  };
+  // createUser = async () => {
+  //   let res = await api.post("/login", {
+  //     email: "email",
+  //     password: "password",
+  //   });
+  //   console.log(res);
+  //   this.setState({ email: res.data });
+  // };
 
   handleChange(event) {
     this.setState({
